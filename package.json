@@ -1,0 +1,8 @@
+{
+  "name": "@tripleerv/corps",
+  "version": "0.5.0",
+  "main": "body.js",
+  "repository": "https://github.com/tripleerv.com/corps",
+  "author": "@josiahwiebe <hi@jwie.be>",
+  "license": "MIT"
+}
