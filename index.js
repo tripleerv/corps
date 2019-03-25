@@ -1,4 +1,4 @@
-const getRawBody = require('./rawBody')
+const getRawBody = require('./rawBody.js')
 const qs = require('querystring')
 
 const parseJSON = str => {
