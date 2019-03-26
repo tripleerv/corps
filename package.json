@@ -2,7 +2,7 @@
   "name": "@tripleerv/corps",
   "version": "0.5.1",
   "main": "index.js",
-  "repository": "https://github.com/tripleerv.com/corps",
+  "repository": "https://github.com/tripleerv/corps",
   "author": "@josiahwiebe <hi@jwie.be>",
   "license": "MIT",
   "dependencies": {

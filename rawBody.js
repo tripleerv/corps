@@ -1,15 +1,16 @@
 module.exports = stream => {
-  let buffers = []
+  return new Promise((resolve, reject) => {
+    let buffers = []
 
-  stream.on('data', chunk => {
-    buffers.push(chunk)
-  })
+    stream.on('data', chunk => {
+      buffers.push(chunk)
+    })
 
-  stream.on('end', () => {
-    return new Promise(resolve => {
-      const rawBody = Buffer.concat(buffers)
+    stream.on('end', () => {
+      let rawBody = Buffer.concat(buffers)
       resolve(rawBody)
     })
+
+    stream.on('error', err => reject(err))
   })
-  return
 }
