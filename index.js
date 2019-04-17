@@ -1,5 +1,5 @@
 const getRawBody = require('./rawBody.js')
-const { parse } = require('query-string')
+const { parse } = require('qs')
 
 const parseJSON = str => {
   try {
@@ -20,6 +20,6 @@ const buffer = req =>
 
 const json = req => buffer(req).then(body => parseJSON(body))
 
-const form = req => buffer(req).then(body => parse(body.toString()), { arrayFormat: 'index'})
+const form = req => buffer(req).then(body => parse(body.toString()))
 
 module.exports = { json, form }
