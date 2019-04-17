@@ -1,6 +1,6 @@
 {
   "name": "@tripleerv/corps",
-  "version": "0.5.4-0",
+  "version": "0.5.4-next",
   "main": "index.js",
   "repository": "https://github.com/tripleerv/corps",
   "author": "@josiahwiebe <hi@jwie.be>",
