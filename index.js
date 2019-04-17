@@ -20,6 +20,6 @@ const buffer = req =>
 
 const json = req => buffer(req).then(body => parseJSON(body))
 
-const form = req => buffer(req).then(body => parse(body.toString()))
+const form = req => buffer(req).then(body => parse(body.toString()), { arrayFormat: 'index'})
 
 module.exports = { json, form }
