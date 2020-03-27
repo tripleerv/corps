@@ -15,6 +15,11 @@ const formsrv = http.createServer(async (req, res) => {
   return send(res, 200, data)
 })
 
+const formarrsrv = http.createServer(async (req, res) => {
+  const data = await form(req)
+  return send(res, 200, data)
+})
+
 test('json', async t => {
   const url = await listen(jsonsrv)
   const res = await fetch(url, {
@@ -35,7 +40,7 @@ test('json', async t => {
   t.is(jsonData.c.d, 'e')
 })
 
-test('form', async t => {
+test('form nested', async t => {
   const url = await listen(formsrv)
   const res = await fetch(url, {
     method: 'POST',
@@ -48,4 +53,18 @@ test('form', async t => {
   const formData = await res.json()
   t.is(formData.a, 'b')
   t.is(formData.c.d, 'e')
+})
+
+test('form array', async t => {
+  const url = await listen(formarrsrv)
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'a[]=z&a[]=x&a[]=y'
+  })
+
+  const formData = await res.json()
+  t.deepEqual(formData.a, ['z','x','y'])
 })
