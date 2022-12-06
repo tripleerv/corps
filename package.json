@@ -10,7 +10,7 @@
     "prepublish": "npm run test"
   },
   "dependencies": {
-    "qs": "^6.7.0"
+    "qs": "^6.7.3"
   },
   "devDependencies": {
     "@polka/send-type": "^0.5.2",
